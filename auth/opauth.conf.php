@@ -14,7 +14,7 @@ $config = array(
  *  - if Opauth is reached via http://auth.example.org/, path is '/'
  */
 //	'path' => '/Opauth/Core/lib/Opauth/',
-	'path' => '/bookmart/auth/',
+	'path' => '/auth/',
 
 /**
  * Callback URL: redirected to after authentication, successful or otherwise
