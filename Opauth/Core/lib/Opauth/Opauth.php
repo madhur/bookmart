@@ -291,6 +291,7 @@ class Opauth {
 			);
 
 			foreach ($directories as $dir) {
+				echo $dir;
 				foreach ($classNames as $name) {
 					if (file_exists($dir.$name.'.php')) {
 						require $dir.$name.'.php';
