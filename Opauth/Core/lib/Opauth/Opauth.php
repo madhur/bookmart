@@ -100,6 +100,7 @@ class Opauth {
 			if (strtolower($this->env['params']['strategy']) == 'callback') {
 				$this->callback();
 			} elseif (array_key_exists($this->env['params']['strategy'], $this->strategyMap)) {
+				
 				$name = $this->strategyMap[$this->env['params']['strategy']]['name'];
 				$class = $this->strategyMap[$this->env['params']['strategy']]['class'];
 				$strategy = $this->env['Strategy'][$name];
@@ -117,6 +118,7 @@ class Opauth {
 
 				$this->Strategy->callAction($this->env['params']['action']);
 			} else {
+
 				trigger_error('Unsupported or undefined Opauth strategy - '.$this->env['params']['strategy'], E_USER_ERROR);
 			}
 		} else {
@@ -130,7 +132,7 @@ class Opauth {
 	 */
 	private function parseUri() {
 		$this->env['request'] = substr($this->env['request_uri'], strlen($this->env['path']) - 1);
-
+	
 		if (preg_match_all('/\/([A-Za-z0-9-_]+)/', $this->env['request'], $matches)) {
 			foreach ($matches[1] as $match) {
 				$this->env['params'][] = $match;
