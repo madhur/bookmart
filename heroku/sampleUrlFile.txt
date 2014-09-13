@@ -1,2 +1,0 @@
-[InternetShortcut]
-URL=http://www.my-heroku-app.herokuapp.com
