@@ -63,7 +63,7 @@
 
 
 
-            $q = "INSERT INTO USERS(first_name, last_name, email, pass, registration_date) VALUES('','','$email', SHA1('$password'), NOW())";
+            $q = "INSERT INTO USERS(first_name, last_name, email, pass, registration_date) VALUES('$firstname','$lastname','$email', SHA1('$password'), NOW())";
 
             $r = mysqli_query($dbc, $q);
 
