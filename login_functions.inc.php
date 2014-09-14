@@ -1,7 +1,7 @@
 <?php
 
 
-function redirect_user($page = 'login.php')
+function redirect_user($page = 'home.php')
 {
 
 	$url = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
@@ -39,7 +39,7 @@ function check_login($dbc, $email='', $pass='')
 
 	if(empty($errors))
 	{
-		$q = "SELECT user_id, first_name from users where email='$e' and pass = SHA1('$p')";
+		$q = "SELECT user_id, first_name, email from users where email='$e' and pass = SHA1('$p')";
 
 		$r = @mysqli_query($dbc, $q);
 

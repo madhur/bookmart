@@ -1,18 +1,25 @@
 <?php
 
 session_start();
+require('login_functions.inc.php');
 
 if(!isset($_SESSION['user_id']))
 {
-	require('login_functions.inc.php');
-
+	
 	redirect_user();
 }
 
   include('header.inc.html'); 
 
-  print "<h1>Logged in</h1>
-  <p>You are now logged in, {$_SESSION['first_name']}!</p>
-	 <p><a	href=\"logout.php\">Logout</a></p>";
+?>
 
-  include('footer.inc.html'); ?>
+<div class="container">
+<h1>Logged in</h1>
+  <?php print "<p>Thank you for logging in, {$_SESSION['first_name']}!</p>";
+
+  	redirect_user('home.php');
+  ?>
+</div>
+
+	
+ <?php include('footer.inc.html'); ?>

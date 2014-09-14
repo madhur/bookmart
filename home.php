@@ -5,7 +5,8 @@ session_start();
 include('header.inc.html');
 
 ?>
-
+<div class="container">
+<div class='row'>
 <div class="panel panel-primary">
 	
 	Our Books
@@ -19,7 +20,7 @@ $results = GetBooks($dbc);
 
 
 
-print "<div class='row'>";
+
 
 foreach($results as $row)
 {
@@ -50,6 +51,7 @@ print "</div>";
 }
 
 
+print "</div>";
 print "</div>";
 
 include('footer.inc.html'); 

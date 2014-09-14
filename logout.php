@@ -1,13 +1,14 @@
 <?php
 
 session_start();
+require('login_functions.inc.php');
 
 if(!isset($_SESSION['user_id']))
 {
 
-	require('login_functions.inc.php');
+	
 
-	redirect_user();
+	redirect_user('index.php');
 }
 else
 {
@@ -20,8 +21,6 @@ else
 
   include('header.inc.html'); 
 
-  print "<h1>Logged out</h1>
-  <p>You are now logged out</p>
-	 <p><a	href=\"login.php\">Login</a></p>";
+ redirect_user('index.php');
 
   include('footer.inc.html'); ?>
