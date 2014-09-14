@@ -70,6 +70,24 @@ jQuery(function($) {
        $('a[href=' + lastTab + ']').tab('show');
   }
 
+  $("#dialog").dialog({
+    autoOpen: false,
+    position: 'center' ,
+    title: 'EDIT',
+    draggable: false,
+    width : 300,
+    height : 40, 
+    resizable : false,
+    modal : true,
+});
+
+$("#dialog_trigger").click( function() {
+    $("#dialog").load('register.php', function() {
+        $("#dialog").dialog("open");
+    });
+});
+
+
 
 });
 

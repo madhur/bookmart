@@ -13,13 +13,11 @@ include('carousel.inc.html');
 
 <?php
 
- if(isset($_SESSION['user_id']))
-            {
+
+           
                 include('latestbooks.inc.php');
                   
-            }
-            else
-        include('login.inc.php');?>
+           ?>
 </div>
 
 <?php
