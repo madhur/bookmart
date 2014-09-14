@@ -5,6 +5,12 @@
    if($_SERVER['REQUEST_METHOD']=='POST')
    {
 
+    if(isset($_POST['register']))
+    {
+
+
+
+
      if(empty($_POST['firstname']))
         {
             $errors[] = 'First Name is mandatory';
@@ -90,18 +96,43 @@
         else
         {
 
-              echo  '<h1>Error!</h1 >
-               <p class="error">The following error(s)  occurred:<br  />';
-               foreach  ($errors as  $msg) 
-               { //  Print each  error.
-                 echo " - $msg<br />\n";
-               }
-              echo '</p><p>Please try again.</p><p><br /></p>';
+              
+              
+             
+           
       
 
         }
 
-      
+      }
+      else if(isset($_POST['login']))
+      {
+
+          require('login_functions.inc.php');
+          require('mysqli_connect.php');
+
+            list($check, $data) = check_login($dbc, $_POST['email'], $_POST['pass']);
+
+              if($check)
+              {
+                session_start();
+                $_SESSION['user_id'] = $data['user_id'];
+                $_SESSION['first_name'] = $data['first_name'];
+
+                redirect_user('loggedin.php');
+              }
+              else
+              {
+                $errors = $data;
+
+              }
+
+              mysqli_close($dbc);
+
+
+
+
+      }
 
    }
 
@@ -131,70 +162,52 @@
 
    ?>
 
+<div class="container">
 <div class="row">
- <div class="col-lg-10 darkBody" style="float: none; margin: 0 auto;">
-  <form class="form-horizontal" action='' method="POST">
-  <fieldset>
-    <div id="legend">
-      <legend class="">Register</legend>
-    </div>
-   
- 
- <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="email">First Name</label>
-      <div class="controls">
-        <input type="text" id="firstname" name="firstname" placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your First Name</p>
-      </div>
-    </div>
 
-     <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="email">Last Name</label>
-      <div class="controls">
-        <input type="text" id="lastname" name="lastname" placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your Last Name</p>
-      </div>
-    </div>
-    
+   <!-- Nav tabs -->
+
+<ul id="myTab" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#register" id="#regsiter" role="tab" data-toggle="tab"><h3>Sign up</h3></a></li>
+  <li><a href="#login" id="#login" role="tab" data-toggle="tab"><h3>Login</h3></a></li>
+</ul>
 
 
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" required=true placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your E-mail</p>
-      </div>
-    </div>
+<div class="tab-content">
+  <div class="tab-pane" id="login">
+    <?php
+        include('login.inc.php');
+    ?>
+
+
+  </div>
+  <div class="tab-pane active" id="register">
+
+
+  <?php
+        include('register.inc.php');
+    ?>
+
+
+  </div>
  
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" required=true placeholder="" class="input-xlarge">
-        <p class="help-block">Password should be at least 4 characters</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-      <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" required=true placeholder="" class="input-xlarge">
-        <p class="help-block">Please confirm password</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Register</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
- </div>
+</div>
+<?php
+if(isset($errors))
+{
+
+  print "<div style='text-align:center'>";
+  foreach  ($errors as  $msg) 
+               { //  Print each  error.
+                 echo "<p class='text-danger'>$msg<br /></p>\n";
+               }
+
+  print "</div>";
+}
+
+?>
+
+</div>
+
 </div>
    <?php include('footer.inc.html'); ?>

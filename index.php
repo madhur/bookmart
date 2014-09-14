@@ -1,79 +1,39 @@
-   <?php include('header.inc.html'); ?>
+   <?php include('header.inc.html'); 
 
-   <div class="row">
-            <div class="col-lg-12">
-                <img class="img-responsive" src="img/sale.png" width="100%" />
-            </div>
-
-        </div>
-
-       
+include('carousel.inc.html');
 
 
 
-        <div class="row">
-            <div class="col-lg-12 ">
-                <h3>OUR BOOKS</h3>
-                <ul class="books">
-                    <li>
-                        <a href="#">
-                            <img src="img/book1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book2.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book2.png" />
-                        </a>
-                    </li>
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+    require('login_functions.inc.php');
+    require('mysqli_connect.php');
 
-                    <li>
-                        <a href="#">
-                            <img src="img/book1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book2.png" />
-                        </a>
-                    </li>
+    list($check, $data) = check_login($dbc, $_POST['email'], $_POST['pass']);
 
-                    <li>
-                        <a href="#">
-                            <img src="img/book1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book2.png" />
-                        </a>
-                    </li>
+    if($check)
+    {
+        session_start();
+        $_SESSION['user_id'] = $data['user_id'];
+        $_SESSION['first_name'] = $data['first_name'];
 
-                    <li>
-                        <a href="#">
-                            <img src="img/book1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="img/book2.png" />
-                        </a>
-                    </li>
+        redirect_user('loggedin.php');
+    }
+    else
+    {
+        $errors = $data;
 
+    }
 
+    mysqli_close($dbc);
+}
+?>
 
-                </ul>
-            </div>
-        </div>
+<div class="container">
 
+<?php
+include('login.inc.php');?>
+</div>
 
-   <?php include('footer.inc.html'); ?>
+<?php
+include('footer.inc.html'); ?>

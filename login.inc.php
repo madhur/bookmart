@@ -1,21 +1,8 @@
    <?php 
 
    include('header.inc.html'); 
-
-   //   Print   any error   messages,   if  they    exist:
-   if (isset($errors)    &&  !empty($errors))    
-   {
-       echo   '<h1>Error!</h1>
-          <p  class="error">The   following error(s)    occurred:<br    />';
-       foreach($errors as $msg)   
-       {
-           echo   "   -   $msg<br />\n";
-       }
-       echo   '</p> <p>Please try again.</p>';
-   }
-  
-
    ?>
+
 
     <div class="omb_login">
         <h3 class="omb_authTitle">Login or <a href="register.php">Sign up</a></h3>
@@ -52,13 +39,13 @@
                 <form class="omb_loginForm" action="" autocomplete="off" method="POST">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" name="email" placeholder="email address">
+                        <input type="text" class="form-control" required name="email" placeholder="email address">
                     </div>
                     <span class="help-block"></span>
                                         
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input  type="password" class="form-control" name="pass" placeholder="Password">
+                        <input  type="password" class="form-control" required name="pass" placeholder="Password">
                     </div>
 
                     <span class="help-block">
@@ -69,7 +56,7 @@
                     ?>
                     </span>
 
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    <input class="btn btn-lg btn-primary btn-block" name="login" value="Login" type="submit"></input>
                 </form>
             </div>
         </div>
@@ -88,4 +75,4 @@
     </div>
 
 
-   <?php include('footer.inc.html'); ?>
+  
