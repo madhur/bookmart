@@ -7,10 +7,6 @@ include('header.inc.html');
 ?>
 <div class="container">
 <div class='row'>
-<div class="panel panel-primary">
-	
-	Our Books
-</div>
 
 <?php
 require('book_functions.inc.php');

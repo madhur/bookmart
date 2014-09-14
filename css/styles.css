@@ -144,7 +144,7 @@
 
 .book-detail-image
 {
-    text-align:center;
+    text-align:left;
 }
 
 
@@ -170,4 +170,67 @@
     margin-top:50px;
 }
 
+.book-detail-container
+{
+    margin-top:50px;
+    padding-bottom:50px;
 
+
+}
+
+
+.available-on {
+color: #00abee;
+font-size: 24px;
+margin-top: 50px;
+clear: both;
+}
+
+ul#storeOptions .wp-image-1001 {
+margin-left: -4px;
+height: 41px;
+}
+
+ul#storeOptions li {
+width: 168px;
+height: 72px;
+float: left;
+margin-left: 0px;
+}
+
+ul#storeOptions {
+list-style: none;
+margin-top: 10px;
+}
+
+ul.sidebar-books
+{
+    padding-left: 0px;
+    border-left-width:1px;
+    border-left-color:lightgray;
+    border-style: solid;
+    border-right-width: 0px;
+    border-top-width:0px;
+    border-bottom-width:0px;
+
+}
+.sidebar-book
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
+    text-align:center;
+    padding-left: 0px;
+}
+
+.like-header
+{
+    background-color: #34495e;
+    color:white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:15px;
+
+    border-radius: 5px;
+
+}
