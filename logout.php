@@ -1,6 +1,8 @@
 <?php
 
-if(!isset($_COOKIE['user_id']))
+session_start();
+
+if(!isset($_SESSION['user_id']))
 {
 
 	require('login_functions.inc.php');
@@ -9,16 +11,17 @@ if(!isset($_COOKIE['user_id']))
 }
 else
 {
-	setcookie('user_id', '', time()-3600, '/', '',0,0);
+	$_SESSION = array();
+	session_destroy();
 
-	setcookie('first_name', '', time()-3600, '/', '', 0, 0);
+	setcookie ('PHPSESSID', '', time( )-3600,    '/',   '',   0 ,   0);  
 
 }
 
   include('header.inc.html'); 
 
   print "<h1>Logged out</h1>
-  <p>You are now logged in, {$_COOKIE ['first_name']}!</p>
-	 <p><a	href=\"logout.php\">Logout</a></p>";
+  <p>You are now logged out</p>
+	 <p><a	href=\"login.php\">Login</a></p>";
 
   include('footer.inc.html'); ?>

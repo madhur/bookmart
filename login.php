@@ -9,15 +9,15 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 	if($check)
 	{
-		setcookie('user_id', $data['user_id']);
-		setcookie('first_name', $data['first_name']);
-		
+		session_start();
+		$_SESSION['user_id'] = $data['user_id'];
+		$_SESSION['first_name'] = $data['first_name'];
+
 		redirect_user('loggedin.php');
 	}
 	else
 	{
 		$errors = $data;
-
 
 	}
 
