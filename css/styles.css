@@ -234,3 +234,13 @@ ul.sidebar-books
     border-radius: 5px;
 
 }
+
+ul.contact-icons {
+list-style-type: none;
+padding-left: 0;
+}
+
+ul.contact-icons li {
+display: inline;
+margin-right: 10px;
+}
