@@ -244,3 +244,21 @@ ul.contact-icons li {
 display: inline;
 margin-right: 10px;
 }
+
+.ui-widget-overlay {
+  opacity: 0.7;
+  filter: Alpha(Opacity=90);
+  background-color: black;
+}
+
+.ui-widget-header
+{
+
+     background-color: #34495e;
+     background-image: none;
+}
+
+#dialog
+{
+    display: none;
+}

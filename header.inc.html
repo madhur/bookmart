@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,11 @@
     <link href="css/prettyPhoto.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+  
     <link rel="stylesheet" href="css/basic.css">
      <link rel="stylesheet" href="css/jquery-ui.min.css">
+       <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+         <link href="css/styles.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -47,7 +50,7 @@
             }
             else
             {
-                print "<li><a id='dialog_trigger'>Login/Signup</a></li>";                
+                print "<li><a href='register.php'>Login/Signup</a></li>";                
             }
             ?>
                     
@@ -60,7 +63,7 @@
                 $grav_url = get_gravatar($_SESSION['email']);
 
                 print "<li class='dropdown'>
-                        <a  class='dropdown-toggle' style='cursor:pointer' data-toggle='dropdown'> <img height=24 width=24 src=$grav_url alt='' /> {$_SESSION['first_name']} <i class='icon-angle-down'></i></a>
+                        <a  class='dropdown-toggle' style='cursor:pointer' data-toggle='dropdown'> <img height=24 width=24 src=$grav_url alt='' /> {$_SESSION['first_name']} <i class='fa fa-angle-down'></i></a>
                         <ul class='dropdown-menu'>
                             <li><a href='logout.php'>Logout</a></li>                         
                         </ul>
@@ -76,7 +79,10 @@
         </div>
     </header><!--/header-->
 
-<div id="dialog"></div>
+<div id="dialog">
+<?php include 'logintabs.inc.php' ?>
+
+</div>
 <?php
 
 function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {

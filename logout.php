@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 require('login_functions.inc.php');
 
 if(!isset($_SESSION['user_id']))
@@ -18,6 +19,8 @@ else
 	setcookie ('PHPSESSID', '', time( )-3600,    '/',   '',   0 ,   0);  
 
 }
+
+
 
   include('header.inc.html'); 
 

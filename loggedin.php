@@ -1,13 +1,14 @@
 <?php
 
 session_start();
-require('login_functions.inc.php');
+
 
 if(!isset($_SESSION['user_id']))
 {
 	
 	redirect_user();
 }
+require('login_functions.inc.php');
 
   include('header.inc.html'); 
 

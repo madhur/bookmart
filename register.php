@@ -2,7 +2,8 @@
 
    include('header.inc.html'); 
 
-   if($_SERVER['REQUEST_METHOD']=='POST')
+
+ if($_SERVER['REQUEST_METHOD']=='POST')
    {
 
     if(isset($_POST['register']))
@@ -144,15 +145,14 @@
             else
               return false;
    }
+   
 
    ?>
 
 <div class="container">
 <div class="row">
 
-   <!-- Nav tabs -->
-
-<ul id="myTab" class="nav nav-tabs" role="tablist">
+    <ul id="myTab" class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#register" id="#regsiter" role="tab" data-toggle="tab"><h3>Sign up</h3></a></li>
   <li><a href="#login" id="#login" role="tab" data-toggle="tab"><h3>Login</h3></a></li>
 </ul>
