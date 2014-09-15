@@ -93,17 +93,6 @@
 
 
         }
-        else
-        {
-
-              
-              
-             
-           
-      
-
-        }
-
       }
       else if(isset($_POST['login']))
       {
@@ -125,14 +114,9 @@
               else
               {
                 $errors = $data;
-
               }
 
               mysqli_close($dbc);
-
-
-
-
       }
 
    }

@@ -12,8 +12,8 @@
                     <h3>Our Latest Books</h3>
                     <!--<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>-->
                     <div class="btn-group">
-                        <a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="icon-angle-left"></i></a>
-                        <a class="btn btn-danger" href="#scroller" data-slide="next"><i class="icon-angle-right"></i></a>
+                        <a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                        <a class="btn btn-danger" href="#scroller" data-slide="next"><i class="fa fa-angle-right"></i></a>
                     </div>
                     <p class="gap"></p>
                 </div>
