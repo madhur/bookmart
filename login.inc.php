@@ -4,19 +4,19 @@
         <h3 class="omb_authTitle">Login or <a href="register.php">Sign up</a></h3>
         <div class="row omb_row-sm-offset-3 omb_socialButtons">
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                <a href="/hybridauth/facebook.php" class="btn btn-lg btn-block omb_btn-facebook">
                     <i class="fa fa-facebook visible-xs"></i>
                     <span class="hidden-xs">Facebook</span>
                 </a>
             </div>
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+                <a href="/hybridauth/twitter.php" class="btn btn-lg btn-block omb_btn-twitter">
                     <i class="fa fa-twitter visible-xs"></i>
                     <span class="hidden-xs">Twitter</span>
                 </a>
             </div>  
             <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                <a href="/hybridauth/google.php" class="btn btn-lg btn-block omb_btn-google">
                     <i class="fa fa-google-plus visible-xs"></i>
                     <span class="hidden-xs">Google+</span>
                 </a>

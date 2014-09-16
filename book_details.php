@@ -91,8 +91,25 @@ print '</div></div>';
 
 print "<div class='row'>";
 print "<div class='col-md-12'>
-		<h3>Other books</h3>
-		</div>";
+		<h3>Other books</h3>";
+
+print "<ul class='books'>";
+$i=0;
+foreach($books as $row)
+	{
+		if($i ==9)
+			break;
+		
+				print "<li>
+				<a href=/book_details.php?book_id={$row['book_id']}><img height=180 width=86 src=/images/$row[imagename]></img></a>
+				</li>";
+				
+				$i = $i + 1;			
+		
+	}
+print "</ul>";
+
+		print "</div>";
 
 
 print '</div></div>';

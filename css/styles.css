@@ -262,3 +262,14 @@ margin-right: 10px;
 {
     display: none;
 }
+
+.books li
+{
+    display: inline-block;
+    padding-right: 30px;
+}
+
+ul.books {
+    padding: 0px;
+    list-style-type: none;
+}
