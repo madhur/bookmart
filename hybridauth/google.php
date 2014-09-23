@@ -19,7 +19,7 @@
         $_SESSION['first_name'] = $user_profile->firstName;
         $_SESSION['email']=  $user_profile->photoURL;
 
-      print "<html><head><meta http-equiv='Location' content='http://bookmart.herokuapp.com/home.php'></head></html>";
+      print "<html><head><meta http-equiv='refresh' content='0;http://bookmart.herokuapp.com/home.php'></head></html>";
    }
     catch( Exception $e ){
         switch( $e->getCode() ){
