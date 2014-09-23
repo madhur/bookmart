@@ -34,7 +34,7 @@ if($check)
 		<p>$data[description]</p>
 	
 		<a href=/read_online.php?book_id=$book_id class='book-button'>Read online</a>
-		<a href=/download.php?book_id=$book_id class='book-button'>Download</a>
+	
 
 		<p class='available-on'>Coming soon on: </p>
 
