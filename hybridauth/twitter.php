@@ -14,6 +14,14 @@
      
     // get the user profile
     $twitter_user_profile = $twitter->getUserProfile();
+
+     $_SESSION['user_id'] =$user_profile->identifier;
+        $_SESSION['first_name'] = $user_profile->firstName;
+        $_SESSION['email']=  $user_profile->photoURL;
+
+      redirect_user();
+      
+      /*
     echo "Ohai there! U are connected with: <b>{$twitter->id}</b><br />";
     echo "As: <b>{$twitter_user_profile->displayName}</b><br />";
     echo "And your provider user identifier is: <b>{$twitter_user_profile->identifier}</b><br />";
@@ -30,7 +38,7 @@
     // disconnect the user ONLY form twitter
     // this will not disconnect the user from others providers if any used nor from your application
     echo "Logging out..";
-    $twitter->logout();
+    $twitter->logout();*/
     }
     catch( Exception $e ){
     // Display the recived error,
