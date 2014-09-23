@@ -13,7 +13,7 @@
     // user will be redirected to Twitter for authentication,
     // if he already did, then Hybridauth will ignore this step and return an instance of the adapter
     $params['hauth_return_to'] = "/home.php";
-    $fb = $hybridauth->authenticate( "Facebook" , $params);
+    $fb = $hybridauth->authenticate( "Facebook" );
 
     $user_profile = $fb->getUserProfile();
 
@@ -23,7 +23,7 @@
         $_SESSION['first_name'] = $user_profile->firstName;
         $_SESSION['email']=  $user_profile->photoURL;
 
-      redirect_user();
+     print "<meta http-equiv='Location' content='http://bookmart.herokuapp.com/home.php'>";
      
    }
     catch( Exception $e ){

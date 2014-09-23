@@ -12,7 +12,7 @@
     // if he already did, then Hybridauth will ignore this step and return an instance of the adapter
 
         $params['hauth_return_to'] = "/home.php";
-    $twitter = $hybridauth->authenticate( "Twitter", $params );
+    $twitter = $hybridauth->authenticate( "Twitter" );
      
     // get the user profile
     $twitter_user_profile = $twitter->getUserProfile();
@@ -21,7 +21,7 @@
         $_SESSION['first_name'] = $user_profile->firstName;
         $_SESSION['email']=  $user_profile->photoURL;
 
-      redirect_user();
+    print "<meta http-equiv='Location' content='http://bookmart.herokuapp.com/home.php'>";
 
       /*
     echo "Ohai there! U are connected with: <b>{$twitter->id}</b><br />";
