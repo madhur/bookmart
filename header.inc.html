@@ -60,7 +60,11 @@
                      <?php
             if(isset($_SESSION['user_id']))
             {
+                if($_SESSION['email'] contains '@')
                 $grav_url = get_gravatar($_SESSION['email']);
+                else
+                    $grav_url=$_SESSION['email'];
+                
 
                 print "<li class='dropdown'>
                         <a  class='dropdown-toggle' style='cursor:pointer' data-toggle='dropdown'> <img height=24 width=24 src=$grav_url alt='' /> {$_SESSION['first_name']} <i class='fa fa-angle-down'></i></a>
