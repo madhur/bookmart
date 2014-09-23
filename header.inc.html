@@ -60,7 +60,7 @@
                      <?php
             if(isset($_SESSION['user_id']))
             {
-                if(strpos($_SESSION['email'], '@') ! == false)
+                if(strpos($_SESSION['email'], '@') !== false)
                     $grav_url = get_gravatar($_SESSION['email']);
                 else
                     $grav_url=$_SESSION['email'];
