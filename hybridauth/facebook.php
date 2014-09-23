@@ -1,5 +1,7 @@
     <?php
     // start a new session (required for Hybridauth)
+    include('login_functions.inc.php');
+
     session_start();
     // change the following paths if necessary
     $config = dirname(__FILE__) . '/config.php';
@@ -20,8 +22,7 @@
         $_SESSION['first_name'] = $user_profile->firstName;
         $_SESSION['email']=  $user_profile->photoURL;
 
-        header("Location: index.php");
-die();
+      redirect_user();
      
    }
     catch( Exception $e ){
