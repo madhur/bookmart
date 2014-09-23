@@ -40,24 +40,24 @@ if($check)
 
 		<ul id='storeOptions'>
 <li>
-<img class='alignnone size-full wp-image-1001' title='amazon-kindle' src='/img/amazon-kindle.jpg' alt='' height='' style=''/>
+<img class='alignnone size-full wp-image-1001' width=135 height=35 title='amazon-kindle' src='/img/amazon-kindle.jpg' alt='' height='' style=''/>
 </li>
 
 
 <li>
-<img class='alignnone size-full wp-image-1005' title='google-play-books' src='/img/googlePlayBooks.png' alt='Google Play Books' />
+<img class='alignnone size-full wp-image-1005' width=135 height=35  title='google-play-books' src='/img/googlePlayBooks.png' alt='Google Play Books' />
 </li>
 
 <li>
-<img class='alignnone size-full wp-image-1002' title='ibooks' src='/img/ibooks.jpg' alt='' />
+<img class='alignnone size-full wp-image-1002' width=111 height=41 title='ibooks' src='/img/ibooks.jpg' alt='' />
 </li>
 
 <li class='center-store'>
-<img class='alignnone size-full wp-image-1003' title='kobo' src='/img/kobo.jpg' alt=''/>
+<img class='alignnone size-full wp-image-1003' width=66 height=39 title='kobo' src='/img/kobo.jpg' alt=''/>
 </li>
 
 <li>
-<img class='alignnone size-full wp-image-1006' title='m1' src='/img/m1-learning.png' alt='M1 Learning Centre'  />
+<img class='alignnone size-full wp-image-1006' title='m1' width=154 height=46 src='/img/m1-learning.png' alt='M1 Learning Centre'  />
 </li>
 
 
