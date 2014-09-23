@@ -20,8 +20,8 @@
      $_SESSION['user_id'] =$user_profile->identifier;
         $_SESSION['first_name'] = $user_profile->firstName;
         $_SESSION['email']=  $user_profile->photoURL;
-
-    print "<html><head><meta http-equiv='refresh' content='0;http://bookmart.herokuapp.com/home.php'></head></html>";
+  print_r( $twitter_user_profile );
+   // print "<html><head><meta http-equiv='refresh' content='0;http://bookmart.herokuapp.com/home.php'></head></html>";
 
       /*
     echo "Ohai there! U are connected with: <b>{$twitter->id}</b><br />";
