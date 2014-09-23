@@ -10,7 +10,9 @@
     // try to authenticate the user with twitter,
     // user will be redirected to Twitter for authentication,
     // if he already did, then Hybridauth will ignore this step and return an instance of the adapter
-    $twitter = $hybridauth->authenticate( "Twitter" );
+
+        $params['hauth_return_to'] = "/home.php";
+    $twitter = $hybridauth->authenticate( "Twitter", $params );
      
     // get the user profile
     $twitter_user_profile = $twitter->getUserProfile();
@@ -20,7 +22,7 @@
         $_SESSION['email']=  $user_profile->photoURL;
 
       redirect_user();
-      
+
       /*
     echo "Ohai there! U are connected with: <b>{$twitter->id}</b><br />";
     echo "As: <b>{$twitter_user_profile->displayName}</b><br />";

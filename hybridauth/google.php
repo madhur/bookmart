@@ -10,7 +10,8 @@
     // try to authenticate the user with twitter,
     // user will be redirected to Twitter for authentication,
     // if he already did, then Hybridauth will ignore this step and return an instance of the adapter
-    $fb = $hybridauth->authenticate( "Google" );
+        $params['hauth_return_to'] = "/home.php";
+    $fb = $hybridauth->authenticate( "Google" , $params);
 
      $user_profile = $fb->getUserProfile();
      
