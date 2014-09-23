@@ -14,7 +14,14 @@
 
     $user_profile = $fb->getUserProfile();
 
-    print_r( $user_profile  );
+    //print_r( $user_profile  );
+
+    $_SESSION['user_id'] =$user_profile->identifier;
+        $_SESSION['first_name'] = $user_profile->firstName;
+        $_SESSION['email']=  $user_profile->photoURL;
+
+        header("Location: index.php");
+die();
      
    }
     catch( Exception $e ){

@@ -11,7 +11,10 @@
     // user will be redirected to Twitter for authentication,
     // if he already did, then Hybridauth will ignore this step and return an instance of the adapter
     $fb = $hybridauth->authenticate( "Google" );
+
+     $user_profile = $fb->getUserProfile();
      
+      print_r( $user_profile  );
    }
     catch( Exception $e ){
         switch( $e->getCode() ){
